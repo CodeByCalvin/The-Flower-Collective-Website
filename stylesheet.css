@@ -30,6 +30,30 @@ nav {
   padding: 14px;
 }
 
+.hover-underline {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+}
+
+.hover-underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 .navigation-btn {
   font-size: 18px;
   text-decoration: none;
@@ -75,7 +99,8 @@ header {
 
 h1 {
   font-size: 64px;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
+  line-height: 1.05;
 }
 
 h2 {
@@ -91,12 +116,121 @@ p {
 
 .btn-buy:link,
 .btn-buy:visited {
-  background-color: #37b24d;
+  background-color: #099268;
   color: #fff;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   padding: 16px 32px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+section {
+  padding: 96px 0px;
+}
+
+/* TESTIMONIALS */
+
+.testimonials {
+  text-align: center;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col {
+  flex: 33.33%;
+  max-width: 31.33%;
+  box-sizing: border-box;
+}
+
+.testimonial {
+  background: #fff;
+  padding: 36px;
+}
+
+.testimonial img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.stars {
+  color: #099268;
+  margin-bottom: 20px;
+}
+
+/* BESTSELLING PRODUCTS */
+
+.grid-3-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+}
+.product {
+  box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.05);
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.product-box {
+  padding: 24px;
+}
+
+.product-details {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.product-details li {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.product-icon {
+  width: 24px;
+  height: 24px;
+  stroke: #099268;
+}
+.product-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px;
+}
+
+.product h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+.btn--small {
+  background-color: #099268;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 16px;
   border-radius: 10px;
   display: inline-block;
 }

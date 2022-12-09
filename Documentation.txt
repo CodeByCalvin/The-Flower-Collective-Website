@@ -1,0 +1,51 @@
+////// Hero Page ////// 
+
+*** Completed features ***
+
+*** In progress ***
+* What makes our collective special (no pesticides/harsh chemicals, locally sourced, supporting local farmers?)
+* Testimonials
+* Three boxes to show best-selling items
+
+*** Future features ***
+Enter email to sign up 
+
+Navigation dropdown bar
+Information on the footer
+Style the collective box to highlight it
+
+////// The Team ////// 
+
+*** Completed features ***
+
+*** In progress ***
+
+*** Future features ***
+
+Four circular portraits
+Credentials - links to social media 
+Testimonials
+
+////// Flowers ////// 
+
+*** Completed features ***
+
+*** In progress ***
+
+*** Future features ***
+
+////// Plants ////// 
+
+*** Completed features ***
+
+*** In progress ***
+
+*** Future features ***
+
+////// The Collective Box ////// 
+
+*** Completed features ***
+
+*** In progress ***
+
+*** Future features ***
