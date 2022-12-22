@@ -1,18 +1,15 @@
 ////// Hero Page ////// 
 
-*** Completed features ***
-
-*** In progress ***
 * What makes our collective special (no pesticides/harsh chemicals, locally sourced, supporting local farmers?)
+* Learn more button (clicking it scrolls down to first section)
+* Make buttons go darker on hover-state (animated)
 * Testimonials
+* Add lots of customer faces to show off
 * Three boxes to show best-selling items
-
-*** Future features ***
-Enter email to sign up 
-
-Navigation dropdown bar
-Information on the footer
-Style the collective box to highlight it
+* Enter email to sign up (or get discount code)
+* Navigation dropdown bar
+* Information on the footer
+* Style the collective box to highlight it (best-selling/best-value)
 
 ////// The Team ////// 
 

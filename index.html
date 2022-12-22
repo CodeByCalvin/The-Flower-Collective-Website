@@ -23,60 +23,90 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Rubik:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>The Plant Collective Homepage</title>
+    <title>The Flower Collective Homepage</title>
     <link
       rel="stylesheet"
       href="stylesheet.css"
     />
+    <script src="script.js"></script>
   </head>
   <body>
-    <header>
-      <nav class="container">
-        <div>LOGO</div>
-        <div>
-          <a
+    
+    <header class="hero-page">
+
+     <header class="header-nav">
+
+      <div class="logo"><img class="logo" src="The Flower Collective Icon Logo.png"></div>
+
+      <nav class="main-nav">
+        
+        <ul class="main-nav-list">
+          <li><a
             href="#"
-            class="navigation-btn hover-underline"
+            class="nav-link hover-underline"
             >Home</a
-          >
-          <a
-            href="#"
-            class="navigation-btn hover-underline"
+          ></li>
+          <li><a
+            href="the-team.html"
+            class="nav-link hover-underline"
             >The Team</a
-          >
-          <a
-            href="#"
-            class="navigation-btn hover-underline"
-            >Flowers</a
-          >
-          <a
-            href="#"
-            class="navigation-btn hover-underline"
-            >Plants</a
-          >
-          <a
-            href="#"
-            class="navigation-btn hover-underline"
+          ></li>
+          </li>
+  
+          <li><a
+            href="the-collective-box.html"
+            class="nav-link hover-underline"
             >The Collective Box™</a
-          >
-        </div>
+          ></li>
+          <li><a
+            href="#"
+            class="nav-link nav-cta"
+            >Browse</a
+          ></li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="nav-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+          </svg>
+        </li>
+        </ul>
       </nav>
-      <div class="header-container">
+      </header>
+
+      </nav>
+      <div class="hero-container">
         <div class="header-container-inner">
           <h1>Hand-picked and curated boutique flowers</h1>
           <p>
-            The Plant Collective is the work of a passionate and expert team of
+            The Flower Collective is the work of a passionate and expert team of
             plant lovers. We offer a range of carefully selected flower
             arrangements for every occasion; from celebration to sympathy,
             fine-dining to a date in the park - and everything in between.
           </p>
           <a
             href="#"
-            class="btn-buy"
-            >Browse
+            class="btn btn-buy margin-right-sm "
+            >Find your perfect flowers
+          </a>
+          <a
+            href="#"
+            class="btn btn-learn-more hover-underline"
+            >Learn more &#8595
           </a>
         </div>
+
+        <div class="delivered-flowers">
+          <div class="delivered-imgs">
+            <img src="imgs/Customer-Face-1.jpg" alt="Customer photo" />
+            <img src="imgs/Customer-Face-2.jpg" alt="Customer photo" />
+            <img src="imgs/Customer-Face-3.jpg" alt="Customer photo" />
+            <img src="imgs/Customer-Face-4.jpg" alt="Customer photo" />
+            <img src="imgs/Customer-Face-5.jpg" alt="Customer photo" />
+          </div>
+          <p class="delivered-text"><span>75,000+</span> flowers delivered last year!</p>
+        </div>
+
       </div>
+   
+
     </header>
     <section class="about-us container">
       <div>
@@ -166,7 +196,7 @@
           </div>
     </section>
     <section class="bestselling container">
-      <div> <h2>Our Bestselling Arragements</h2> 
+      <div> <h2>Our Bestselling Arrangements</h2> 
 
         <div class="grid-3-columns">
           <figure class="product">
@@ -348,5 +378,11 @@
         </div>
       </div>
     </section>
+
+    <footer>
+      <div class="footer-content">
+       <p class="copyright">&copy; The Plant Collective 2022</p>
+      </div>
+    </footer>
   </body>
 </html>

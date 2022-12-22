@@ -1,15 +1,46 @@
-/*
-      SPACING SYSTEM (px)
-      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-
-      FONT SIZE SYSTEM (px)
-      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-      */
-
 /* 
-      MAIN COLOUR: #099268;
-      GREY COLOUR: #343a40 
-      */
+
+---- 01 TYPOGRAPHY SYSTEM
+
+Font sizes (px):
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights:
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights:
+Default: 1
+Small: 1.05
+Paragraph: 1.6
+    
+----- 02 COLOURS 
+
+-Primary: 
+#099268
+#077553
+-Tints: 
+-Shades:
+-Accents:
+-Greys: 
+#343a40 
+#555
+#333
+
+----- 05 SHADOWS
+
+----- 06 BORDER-RADIUS
+
+Default: 9px
+
+----- 07 WHITESPACE
+
+Spacing System (px):
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
 
 * {
   margin: 0;
@@ -18,16 +49,87 @@
 }
 
 html {
-  font-family: "Rubix", sans-serif;
+  font-family: "Rubik", sans-serif;
   color: #343a40;
 }
 
-nav {
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 96px 0px;
+}
+
+/****************************/
+/* HEADER */
+/****************************/
+
+.logo {
+  margin-top: 6px;
+  margin-left: 14px;
+  width: 65px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-nav {
   font-size: 20px;
   font-weight: 600;
   display: flex;
   justify-content: space-between;
   padding: 14px;
+}
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-right: 24px;
+}
+
+.nav-link {
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  background-color: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  margin: 0 8px;
+  /* text-transform: uppercase; */
+}
+
+.nav-cta:link,
+.nav-cta:visited {
+  display: inline-block;
+
+  border-radius: 10px;
+  transition: all 0.3s;
+  background-color: #099268;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 12px 24px;
+}
+
+.nav-cta:hover,
+.nac-cta:active {
+  background-color: #077553;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
 
 .hover-underline {
@@ -54,24 +156,11 @@ nav {
   transform-origin: bottom left;
 }
 
-.navigation-btn {
-  font-size: 18px;
-  text-decoration: none;
-  display: inline-block;
-  background-color: none;
-  border: none;
-  cursor: pointer;
-  color: white;
-  margin: 0 8px;
-  /* text-transform: uppercase; */
-}
+/****************************/
+/* HERO PAGE */
+/****************************/
 
-.container {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-header {
+.hero-page {
   height: 100vh;
   position: relative;
 
@@ -85,9 +174,10 @@ header {
   color: #fff;
 }
 
-.header-container {
+.hero-container {
   width: 1200px;
   position: absolute;
+  /* left: 35%; */
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -114,23 +204,77 @@ p {
   margin-bottom: 48px;
 }
 
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  border-radius: 10px;
+  display: inline-block;
+  transition: all 0.3s;
+  margin-bottom: 48px;
+}
+
 .btn-buy:link,
 .btn-buy:visited {
   background-color: #099268;
   color: #fff;
-  text-decoration: none;
   font-size: 20px;
   font-weight: 600;
   padding: 16px 32px;
-  border-radius: 10px;
-  display: inline-block;
 }
 
-section {
-  padding: 96px 0px;
+.btn-buy:hover,
+.btn-buy:active {
+  background-color: #077553;
+  box-shadow: inset 0 0 0 3px #fff;
 }
 
+.btn-learn-more {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 8px;
+}
+
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+
+.delivered-flowers {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 48px;
+}
+
+.delivered-imgs {
+  display: flex;
+}
+
+.delivered-imgs img {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  margin-right: -16px;
+  border: 3px solid #fff;
+}
+
+.delivered-imgs img:last-child {
+  margin-right: 0;
+}
+
+.delivered-text {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.delivered-text span {
+  color: #519e87;
+  font-weight: 700;
+}
+
+/****************************/
 /* TESTIMONIALS */
+/****************************/
 
 .testimonials {
   text-align: center;
@@ -176,7 +320,9 @@ section {
   margin-bottom: 20px;
 }
 
+/****************************/
 /* BESTSELLING PRODUCTS */
+/****************************/
 
 .grid-3-columns {
   display: grid;
@@ -233,4 +379,16 @@ section {
   padding: 8px 16px;
   border-radius: 10px;
   display: inline-block;
+}
+
+/****************************/
+/* FOOTER */
+/****************************/
+
+.footer-content {
+}
+
+.copyright {
+  font-size: 16px;
+  margin-left: 10px;
 }
