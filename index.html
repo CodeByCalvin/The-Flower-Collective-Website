@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    
     <meta charset="UTF-8" />
     <meta
       http-equiv="X-UA-Compatible"
@@ -32,19 +33,24 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
     <title>The Flower Collective Homepage</title>
+    
+    
     <link
       rel="stylesheet"
       href="stylesheet.css"
     />
-    <script src="script.js"></script>
+    
+    <script src="script.js" defer></script>
   </head>
   <body>
+    
+    <div class="background-container">
     
     <header class="hero-page">
 
      <header class="header-nav">
 
-      <div class="logo"><img class="logo" src="The Flower Collective Icon Logo.png"></div>
+      <div class="logo"><img class="logo" src="imgs/The Flower Collective Icon Logo.png"></div>
 
       <nav class="main-nav">
         
@@ -82,9 +88,9 @@
         </li>
         </ul>
       </nav>
+    </nav>
       </header>
 
-      </nav>
       <div class="hero-container">
         <div class="header-container-inner">
           <h1>Hand-picked and curated boutique flowers</h1>
@@ -106,28 +112,37 @@
           class="btn btn-learn-more margin-right-sm hover-underline"
           >Learn more &#8595
         </a>
-        <a href="#" class="btn discount-code-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="discount-code-img">
+        <a href="#" class="btn-discount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="discount-code-img btn-moving">
           <path d="M9.375 3a1.875 1.875 0 000 3.75h1.875v4.5H3.375A1.875 1.875 0 011.5 9.375v-.75c0-1.036.84-1.875 1.875-1.875h3.193A3.375 3.375 0 0112 2.753a3.375 3.375 0 015.432 3.997h3.943c1.035 0 1.875.84 1.875 1.875v.75c0 1.036-.84 1.875-1.875 1.875H12.75v-4.5h1.875a1.875 1.875 0 10-1.875-1.875V6.75h-1.5V4.875C11.25 3.839 10.41 3 9.375 3zM11.25 12.75H3v6.75a2.25 2.25 0 002.25 2.25h6v-9zM12.75 12.75v9h6.75a2.25 2.25 0 002.25-2.25v-6.75h-9z" />
         </svg>
         
       </a>
     </div>
 
+
+
     </div>
 
-        <div class="delivered-flowers">
-          <div class="delivered-imgs">
-            <img src="imgs/Customer-Face-1.jpg" alt="Customer photo" />
-            <img src="imgs/Customer-Face-2.jpg" alt="Customer photo" />
-            <img src="imgs/Customer-Face-3.jpg" alt="Customer photo" />
-            <img src="imgs/Customer-Face-4.jpg" alt="Customer photo" />
-            <img src="imgs/Customer-Face-5.jpg" alt="Customer photo" />
-          </div>
-          <p class="delivered-text"><span>75,000+</span> flowers delivered last year!</p>
-        </div>
-
+    <div class="delivered-flowers">
+      <div class="delivered-imgs">
+        <img src="imgs/Customer-Face-1.jpg" alt="Customer photo" />
+        <img src="imgs/Customer-Face-2.jpg" alt="Customer photo" />
+        <img src="imgs/Customer-Face-3.jpg" alt="Customer photo" />
+        <img src="imgs/Customer-Face-4.jpg" alt="Customer photo" />
+        <img src="imgs/Customer-Face-5.jpg" alt="Customer photo" />
       </div>
+      <p class="delivered-text"><span>75,000+</span> flowers delivered last year!</p>
+    </div>
+
+    
+    
+    </div>
+
    
+
+    
+        
+     
 
     </header>
     <section class="about-us container">
@@ -170,7 +185,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylesheet.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
   <body>
@@ -180,7 +195,7 @@
         <div class="row">
           <div class="col">
             <div class="testimonial">
-              <img src="testimonial-1.jpg" alt="">
+              <img src="imgs/testimonial-1.jpg" alt="">
               <div class="name">Sally Harper</div>
               <div class="stars">
                 <i class="fas fa-star"></i>
@@ -198,7 +213,7 @@
 
           <div class="col">
             <div class="testimonial">
-              <img src="testimonial-2.jpg" alt="">
+              <img src="imgs/testimonial-2.jpg" alt="">
               <div class="name">Rhianna Alslot</div>
               <div class="stars">
                 <i class="fas fa-star"></i>
@@ -216,7 +231,7 @@
 
           <div class="col">
             <div class="testimonial">
-              <img src="testimonial-3.jpg">
+              <img src="imgs/testimonial-3.jpg">
               <div class="name">Marcus Layton</div>
               <div class="stars">
                   <i class="fas fa-star"></i>
@@ -238,7 +253,7 @@
         <div class="grid-3-columns">
           <figure class="product most-popular">
             <img
-              src="flower-box.jpg"
+              src="imgs/flower-box.jpg"
               alt="Chair"
               class="product-image"
             />
@@ -291,7 +306,7 @@
 
           <figure class="product">
             <img
-              src="dried flowers.jpg"
+              src="imgs/dried flowers.jpg"
               alt="Chair"
               class="product-image"
             />
@@ -353,7 +368,7 @@
 
           <figure class="product">
             <img
-              src="flower hamper box.jpg"
+              src="imgs/flower hamper box.jpg"
               alt="Chair"
               class="product-image"
             />
@@ -472,5 +487,35 @@
 
       </div>
     </footer>
+  </div>
+  <div class="overlay hidden"></div>
+      <div class="coupon-container hidden">
+        <button class="coupon-close">X</button>
+        <div class="coupon-modal">
+          <div class="coupon-left"></div>
+          <div class="coupon-right inner-border">
+            <!-- <div class="coupon-right--border"> -->
+              
+              <h1>20% OFF</h1>
+              <p>all bouquets and hamper boxes</p>
+              <form class="coupon-form" action="#">
+                <div>
+                  <label for="email"></label>
+                  <input class='form-email' id="email" type="text" placeholder="your@email.com" required/>
+                </div>
+                
+                <button class="btn btn-form">Start Shopping</button>
+                
+              </form>
+            </div>
+          </div>
+        </div>
+
+        
   </body>
+
+
+  
+
+      
 </html>
