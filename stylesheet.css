@@ -63,10 +63,11 @@ body {
   color: #343a40;
   line-height: 1;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 120rem;
   margin: 0 auto;
 }
 
@@ -89,7 +90,7 @@ body.stop-scrolling {
 .logo {
   margin-top: 0.6rem;
   margin-left: 1.4rem;
-  width: 6.5rem;
+  width: 5.4rem;
 }
 
 .header-nav {
@@ -99,8 +100,6 @@ body.stop-scrolling {
 }
 
 .main-nav {
-  font-size: 2rem;
-  font-weight: 600;
   display: flex;
   justify-content: space-between;
   padding: 1.4rem;
@@ -115,7 +114,7 @@ body.stop-scrolling {
 }
 
 .nav-link {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 500;
   text-decoration: none;
   display: inline-block;
@@ -180,7 +179,7 @@ body.stop-scrolling {
 /* HERO PAGE */
 /****************************/
 
-.hero-page {
+.background-container {
   height: 100vh;
   position: relative;
 
@@ -190,25 +189,26 @@ body.stop-scrolling {
     ),
     url(imgs/hero-photo.jpg);
   background-size: cover;
+  background-position: center;
 
   color: #fff;
 }
 
 .hero-container {
-  width: 120rem;
+  width: 50%;
   position: absolute;
   /* left: 35%; */
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-60%, -50%);
 }
 
 .header-container-inner {
-  width: 50%;
+  width: 55rem;
 }
 
 h1 {
-  font-size: 6.4rem;
+  font-size: 5rem;
   margin-bottom: 4.8rem;
   line-height: 1.05;
 }
@@ -228,7 +228,7 @@ p {
 .btn:visited,
 .btn-discount {
   text-decoration: none;
-  border-radius: 1rme;
+  border-radius: 10px;
   display: inline-block;
   transition: all 0.3s;
   margin-bottom: 4.8rem;
@@ -362,18 +362,19 @@ p {
 }
 
 .special-box h3 {
-  font-size: 34px;
-  margin-bottom: 18px;
+  font-size: 3.4rem;
+  margin-bottom: 1.8rem;
 }
 
 .special-box p {
-  font-size: 22px;
+  font-size: 2.2rem;
   line-height: 1.75;
 }
 
 .product-icon-large {
-  width: 50px;
+  width: 5rem;
   stroke: #077553;
+  margin-bottom: 2.8rem;
 }
 
 /****************************/
@@ -456,7 +457,7 @@ p {
   font-size: 2rem;
   /* font-weight: bold; */
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
   position: absolute;
   border-radius: 8px;
   top: -10px;
