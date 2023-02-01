@@ -1,2 +1,4 @@
 # The-Plant-Collective-Website
-Website for a mock company 'The Plant Collective'
+A web design for the boutique flower store, The Plant Collective.
+
+Live demo: https://theflowercollective.netlify.app/
