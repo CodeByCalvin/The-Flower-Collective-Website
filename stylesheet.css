@@ -198,7 +198,7 @@ body.stop-scrolling {
   width: 50%;
   position: absolute;
   /* left: 35%; */
-  left: 50%;
+  left: 55%;
   top: 50%;
   transform: translate(-60%, -50%);
 }
