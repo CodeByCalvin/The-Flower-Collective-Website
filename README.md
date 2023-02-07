@@ -32,5 +32,5 @@
 <ul>
 <li> Smooth scrolling functionality linked to button-presses </li>
 <li> Shopping cart element </li>
-<li> Coupon email/form functionality <li>
+<li> Coupon email/form functionality </li>
 </ul>
