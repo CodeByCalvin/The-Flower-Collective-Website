@@ -68,6 +68,7 @@ function addItemToCart(name, price) {
 }
 
 const addTheCollectiveBox = addItemToCart(items[0].name, items[0].price);
+const addDriedFlowers = addItemToCart(items[1].name, items[1].price);
 
 ///////// Function to update the cart UI
 
