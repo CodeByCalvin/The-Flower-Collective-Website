@@ -48,8 +48,18 @@ const items = [
     quantity: 0,
     image: "imgs/flower-box.jpg",
   },
-  { name: "Dried flowers", price: 34.99, quantity: 0 },
-  { name: "Hamper Box", price: 39.99, quantity: 0 },
+  {
+    name: "Dried flowers",
+    price: 34.99,
+    quantity: 0,
+    image: "imgs/dried flowers.jpg",
+  },
+  {
+    name: "Hamper Box",
+    price: 39.99,
+    quantity: 0,
+    image: "imgs/flower hamper box.jpg",
+  },
 ];
 
 const cartItems = [];
@@ -67,8 +77,29 @@ function addItemToCart(name, price) {
   }
 }
 
-const addTheCollectiveBox = addItemToCart(items[0].name, items[0].price);
-const addDriedFlowers = addItemToCart(items[1].name, items[1].price);
+// Bestselling items add to cart buttons
+addToCartBtn1.addEventListener("click", function (event) {
+  event.preventDefault(),
+    addItemToCart(items[0].name, items[0].price),
+    updateCart();
+});
+
+addToCartBtn2.addEventListener("click", function (event) {
+  event.preventDefault(),
+    addItemToCart(items[1].name, items[1].price),
+    updateCart();
+});
+
+addToCartBtn3.addEventListener("click", function (event) {
+  event.preventDefault(),
+    addItemToCart(items[2].name, items[2].price),
+    updateCart();
+});
+
+// Remove all items from cart
+cartRemoveAllBtn.addEventListener("click", function () {
+  cartItemsContainer.innerHTML = "";
+});
 
 ///////// Function to update the cart UI
 
