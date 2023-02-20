@@ -1,3 +1,5 @@
+////////// SELECTING ELEMENTS
+
 const couponClose = document.querySelector(".coupon-close");
 const couponContainer = document.querySelector(".coupon-container");
 const specialBoxBtn = document.querySelector(".discount-code-img");
@@ -13,6 +15,8 @@ const addToCartBtn1 = document.querySelector(".btn--1");
 const addToCartBtn2 = document.querySelector(".btn--2");
 const addToCartBtn3 = document.querySelector(".btn--3");
 
+////////// DISCOUNT MODAL POPUP
+
 specialBoxBtn.addEventListener("click", function () {
   couponContainer.classList.remove("hidden");
   overlay.classList.remove("hidden");
@@ -27,19 +31,7 @@ couponClose.addEventListener("click", function () {
   body.classList.remove("stop-scrolling");
 });
 
-///////// Shopping cart /////////
-
-addToCartBtn1.addEventListener("click", function () {
-  console.log("Add to cart clicked 1");
-});
-
-addToCartBtn2.addEventListener("click", function () {
-  console.log("Add to cart clicked 2");
-});
-
-addToCartBtn3.addEventListener("click", function () {
-  console.log("Add to cart clicked 3");
-});
+////////// SHOPPING CART
 
 const items = [
   {
@@ -65,8 +57,7 @@ const items = [
 const cartItems = [];
 const cartTotal = [];
 
-///////// Add item to cart
-
+// Add item to cart
 function addItemToCart(name, price) {
   const item = items.find((item) => item.name === name && item.price === price);
   if (item) {
@@ -101,13 +92,12 @@ cartRemoveAllBtn.addEventListener("click", function () {
   cartItemsContainer.innerHTML = "";
 });
 
-///////// Function to update the cart UI
-
+// Update the cart
 function updateCart() {
   // Clear the cart items container
   cartItemsContainer.innerHTML = "";
 
-  // Loop through the cart items and add them to the UI
+  // Loop through the cart items array and add them to the basket
   cartItems.forEach((item) => {
     const cartItemElem = document.createElement("div");
     cartItemElem.className = "cart-item";
@@ -121,7 +111,7 @@ function updateCart() {
       </div>
       <div class="prices">
         <div class="cart-amount">${item.price}</div>
-        <div class="cart-save">Save for later</div>
+        <div class="cart-save">Save</div>
         <div class="cart-remove"><u>Remove</u></div>
       </div>
     `;
@@ -130,5 +120,18 @@ function updateCart() {
   });
 }
 
-updateCart();
+// updateCart();
 console.log(cartItems);
+
+// TEMP - to remove after fixing formatting of shopping cart
+document.addEventListener("DOMContentLoaded", function () {
+  addItemToCart(items[0].name, items[0].price), updateCart();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  addItemToCart(items[1].name, items[1].price), updateCart();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  addItemToCart(items[2].name, items[2].price), updateCart();
+});
