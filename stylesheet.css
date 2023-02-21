@@ -189,7 +189,7 @@ body.stop-scrolling {
   transition: right 0.5s ease-in-out;
   border-radius: 8px;
   width: 45rem;
-  height: 28rem;
+  height: 33rem;
   background-color: rgba(255, 255, 255, 0.9);
   overflow: hidden;
 }
@@ -216,6 +216,7 @@ body.stop-scrolling {
 
 .cart-items {
   padding: 0 1.2rem;
+  border-bottom: 3px solid rgba(155, 155, 155, 0.132);
 }
 
 .cart-img-container {
@@ -234,6 +235,7 @@ body.stop-scrolling {
   gap: 3rem;
   padding: 0.8rem 0.4rem;
   height: 7rem;
+  border-bottom: 2px solid rgba(155, 155, 155, 0.132);
 }
 
 .cart-item-img {
@@ -295,6 +297,46 @@ body.stop-scrolling {
 .cart-remove {
   cursor: pointer;
   color: #f03e3e;
+}
+
+.cart-subtotal {
+  padding: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout-btn {
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: #099268;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  border: none;
+}
+
+.checkout-btn:hover,
+.checkout-btn:active {
+  background-color: #077553;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.checkout-btn:link,
+.checkout-btn:visited,
+.checkout-btn {
+  transition: all 0.3s;
+}
+
+.subtotal-text {
+  font-size: 2.4rem;
+  color: #878787;
+}
+
+.subtotal-amount {
+  color: #000;
 }
 
 /****************************/

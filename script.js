@@ -61,10 +61,15 @@ const cartTotal = [];
 function addItemToCart(name, price) {
   const item = items.find((item) => item.name === name && item.price === price);
   if (item) {
-    cartItems.push(item);
+    const existingCartItem = cartItems.find(
+      (cartItem) => cartItem.name === name && cartItem.price === price
+    );
+    if (existingCartItem) {
+      existingCartItem.quantity += 1;
+    } else {
+      cartItems.push({ ...item, quantity: 1 });
+    }
     console.log(`${name} added to cart.`);
-  } else {
-    console.log(`Could not find item with name ${name} and price ${price}.`);
   }
 }
 
@@ -96,7 +101,6 @@ cartRemoveAllBtn.addEventListener("click", function () {
 function updateCart() {
   // Clear the cart items container
   cartItemsContainer.innerHTML = "";
-
   // Loop through the cart items array and add them to the basket
   cartItems.forEach((item) => {
     const cartItemElem = document.createElement("div");
@@ -105,9 +109,9 @@ function updateCart() {
       <div class="cart-img-container"><img class="cart-item-img" src="${item.image}"></div>
       <div class="cart-item-name">${item.name}</div>
       <div class="cart-counter">
-        <div class="cart-btn cart-increment-btn">+</div>
+        <div class="cart-btn cart-counter-increment">+</div>
         <div class="cart-count">${item.quantity}</div>
-        <div class="cart-btn cart-decrement-btn">-</div>
+        <div class="cart-btn cart-counter-decrement">-</div>
       </div>
       <div class="prices">
         <div class="cart-amount">${item.price}</div>
@@ -118,6 +122,7 @@ function updateCart() {
     // Add the new item to the cart container
     cartItemsContainer.appendChild(cartItemElem);
   });
+  updateSubtotal();
 }
 
 // updateCart();
@@ -134,4 +139,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   addItemToCart(items[2].name, items[2].price), updateCart();
+});
+
+// Subtotal function
+function updateSubtotal() {
+  const subtotalElem = document.querySelector(".subtotal-amount");
+
+  let subTotal = 0;
+  cartItems.forEach(function (item) {
+    subTotal += item.price * item.quantity;
+  });
+  subtotalElem.textContent = "£" + subTotal.toFixed(2);
+}
+
+// Counter increment/decrement buttons
+// TEMP - coudln't get element to initialise, had to put inside DOMContentLoader
+document.addEventListener("DOMContentLoaded", function () {
+  const cartCounterIncrement = document.querySelectorAll(
+    ".cart-counter-increment"
+  );
+  const cartCounterDecrement = document.querySelectorAll(
+    ".cart-counter-decrement"
+  );
+
+  //FIXME
+  cartCounterIncrement.forEach((button) => {
+    button.addEventListener("click", function () {
+      const parentItem = button.parentNode.parentNode;
+    });
+  });
 });
