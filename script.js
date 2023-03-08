@@ -55,7 +55,6 @@ const items = [
 ];
 
 const cartItems = [];
-const cartTotal = [];
 
 // Add item to cart
 function addItemToCart(name, price) {
@@ -121,6 +120,36 @@ function updateCart() {
     `;
     // Add the new item to the cart container
     cartItemsContainer.appendChild(cartItemElem);
+
+    // Increment button
+    const incrementButton = cartItemElem.querySelector(
+      ".cart-counter-increment"
+    );
+    const decrementButton = cartItemElem.querySelector(
+      ".cart-counter-decrement"
+    );
+    const parentItem = incrementButton.closest(".cart-item");
+    const itemIndex = cartItems.findIndex(
+      (item) =>
+        item.name === parentItem.querySelector(".cart-item-name").textContent
+    );
+
+    incrementButton.addEventListener("click", function () {
+      // Increase the quantity property of the cartItem
+      cartItems[itemIndex].quantity++;
+      updateCart();
+    });
+
+    decrementButton.addEventListener("click", function () {
+      if (cartItems[itemIndex].quantity > 0) {
+        cartItems[itemIndex].quantity--;
+      }
+      if (cartItems[itemIndex].quantity === 0) {
+        cartItems.splice(itemIndex, 1);
+        parentItem.remove();
+      }
+      updateCart();
+    });
   });
   updateSubtotal();
 }
@@ -144,28 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
 // Subtotal function
 function updateSubtotal() {
   const subtotalElem = document.querySelector(".subtotal-amount");
-
   let subTotal = 0;
   cartItems.forEach(function (item) {
     subTotal += item.price * item.quantity;
   });
   subtotalElem.textContent = "£" + subTotal.toFixed(2);
 }
-
-// Counter increment/decrement buttons
-// TEMP - coudln't get element to initialise, had to put inside DOMContentLoader
-document.addEventListener("DOMContentLoaded", function () {
-  const cartCounterIncrement = document.querySelectorAll(
-    ".cart-counter-increment"
-  );
-  const cartCounterDecrement = document.querySelectorAll(
-    ".cart-counter-decrement"
-  );
-
-  //FIXME
-  cartCounterIncrement.forEach((button) => {
-    button.addEventListener("click", function () {
-      const parentItem = button.parentNode.parentNode;
-    });
-  });
-});
