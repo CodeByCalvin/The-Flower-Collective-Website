@@ -1,4 +1,4 @@
-////////// SELECTING ELEMENTS
+////////// SELECTING ELEMENTS //////////
 
 const couponClose = document.querySelector(".coupon-close");
 const couponContainer = document.querySelector(".coupon-container");
@@ -8,6 +8,7 @@ const body = document.querySelector("body");
 
 const cartTitle = document.querySelector(".cart-title");
 const cartRemoveAllBtn = document.querySelector(".cart-remove-all-btn");
+const cartRemoveBtn = document.querySelectorAll(".cart-remove");
 const cartItemsContainer = document.querySelector(".cart-items");
 const cartContainer = document.querySelector(".cart-container");
 
@@ -15,7 +16,7 @@ const addToCartBtn1 = document.querySelector(".btn--1");
 const addToCartBtn2 = document.querySelector(".btn--2");
 const addToCartBtn3 = document.querySelector(".btn--3");
 
-////////// DISCOUNT MODAL POPUP
+////////// DISCOUNT MODAL POPUP //////////
 
 specialBoxBtn.addEventListener("click", function () {
   couponContainer.classList.remove("hidden");
@@ -31,7 +32,7 @@ couponClose.addEventListener("click", function () {
   body.classList.remove("stop-scrolling");
 });
 
-////////// SHOPPING CART
+////////// SHOPPING CART //////////
 
 const items = [
   {
@@ -56,7 +57,7 @@ const items = [
 
 const cartItems = [];
 
-// Add item to cart
+/// ADD ITEM TO CART
 function addItemToCart(name, price) {
   const item = items.find((item) => item.name === name && item.price === price);
   if (item) {
@@ -72,7 +73,7 @@ function addItemToCart(name, price) {
   }
 }
 
-// Bestselling items add to cart buttons
+/// BESTSELLING ITEMS ADD TO CART
 addToCartBtn1.addEventListener("click", function (event) {
   event.preventDefault(),
     addItemToCart(items[0].name, items[0].price),
@@ -91,15 +92,16 @@ addToCartBtn3.addEventListener("click", function (event) {
     updateCart();
 });
 
-// Remove all items from cart
+/// REMOVE ALL ITEMS FROM CART
 cartRemoveAllBtn.addEventListener("click", function () {
   cartItemsContainer.innerHTML = "";
 });
 
-// Update the cart
+/// UPDATE THE CART ITEMS
 function updateCart() {
   // Clear the cart items container
   cartItemsContainer.innerHTML = "";
+
   // Loop through the cart items array and add them to the basket
   cartItems.forEach((item) => {
     const cartItemElem = document.createElement("div");
@@ -121,7 +123,7 @@ function updateCart() {
     // Add the new item to the cart container
     cartItemsContainer.appendChild(cartItemElem);
 
-    // Increment button
+    // Increment and decrement buttons
     const incrementButton = cartItemElem.querySelector(
       ".cart-counter-increment"
     );
@@ -135,7 +137,6 @@ function updateCart() {
     );
 
     incrementButton.addEventListener("click", function () {
-      // Increase the quantity property of the cartItem
       cartItems[itemIndex].quantity++;
       updateCart();
     });
@@ -150,12 +151,41 @@ function updateCart() {
       }
       updateCart();
     });
+
+    // Remove all btn
+    cartRemoveAllBtn.addEventListener("click", function () {
+      cartItems.splice(itemIndex, 1);
+      parentItem.remove();
+      updateCart();
+    });
   });
+
+  // Remove item btn on individual items
+  const cartRemoveBtn = document.querySelectorAll(".cart-remove");
+  cartRemoveBtn.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const parentItem = button.closest(".cart-item");
+      const itemIndex = cartItems.findIndex(
+        (item) =>
+          item.name === parentItem.querySelector(".cart-item-name").textContent
+      );
+      cartItems.splice(itemIndex, 1);
+      parentItem.remove();
+      updateCart();
+    });
+  });
+
+  // Subtotal function
+  function updateSubtotal() {
+    const subtotalElem = document.querySelector(".subtotal-amount");
+    let subTotal = 0;
+    cartItems.forEach(function (item) {
+      subTotal += item.price * item.quantity;
+    });
+    subtotalElem.textContent = "£" + subTotal.toFixed(2);
+  }
   updateSubtotal();
 }
-
-// updateCart();
-console.log(cartItems);
 
 // TEMP - to remove after fixing formatting of shopping cart
 document.addEventListener("DOMContentLoaded", function () {
@@ -170,12 +200,4 @@ document.addEventListener("DOMContentLoaded", function () {
   addItemToCart(items[2].name, items[2].price), updateCart();
 });
 
-// Subtotal function
-function updateSubtotal() {
-  const subtotalElem = document.querySelector(".subtotal-amount");
-  let subTotal = 0;
-  cartItems.forEach(function (item) {
-    subTotal += item.price * item.quantity;
-  });
-  subtotalElem.textContent = "£" + subTotal.toFixed(2);
-}
+console.log(cartItems);
