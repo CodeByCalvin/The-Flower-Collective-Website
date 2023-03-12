@@ -6,6 +6,7 @@ const specialBoxBtn = document.querySelector(".discount-code-img");
 const overlay = document.querySelector(".overlay");
 const body = document.querySelector("body");
 
+const cartBtn = document.querySelector(".shopping-cart-btn");
 const cartTitle = document.querySelector(".cart-title");
 const cartRemoveAllBtn = document.querySelector(".cart-remove-all-btn");
 const cartRemoveBtn = document.querySelectorAll(".cart-remove");
@@ -57,6 +58,10 @@ const items = [
 
 const cartItems = [];
 
+cartBtn.addEventListener("click", function () {
+  cartContainer.classList.toggle("open");
+});
+
 /// ADD ITEM TO CART
 function addItemToCart(name, price) {
   const item = items.find((item) => item.name === name && item.price === price);
@@ -107,7 +112,9 @@ function updateCart() {
     const cartItemElem = document.createElement("div");
     cartItemElem.className = "cart-item";
     cartItemElem.innerHTML = `
-      <div class="cart-img-container"><img class="cart-item-img" src="${item.image}"></div>
+      <div class="cart-img-container"><img class="cart-item-img" src="${
+        item.image
+      }"></div>
       <div class="cart-item-name">${item.name}</div>
       <div class="cart-counter">
         <div class="cart-btn cart-counter-increment">+</div>
@@ -115,7 +122,9 @@ function updateCart() {
         <div class="cart-btn cart-counter-decrement">-</div>
       </div>
       <div class="prices">
-        <div class="cart-amount">${item.price}</div>
+        <div class="cart-amount">${(item.price * item.quantity).toFixed(
+          2
+        )}</div>
         <div class="cart-save">Save</div>
         <div class="cart-remove"><u>Remove</u></div>
       </div>
