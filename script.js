@@ -59,6 +59,7 @@ const items = [
 
 const cartItems = [];
 
+// Cart buttons
 cartBtn.addEventListener("click", function () {
   cartContainer.classList.toggle("open");
 });
