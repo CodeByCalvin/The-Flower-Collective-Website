@@ -211,9 +211,23 @@ body.stop-scrolling {
   right: 0;
 }
 
+.cart-close-btn {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 1.2rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+
+.cart-close-btn:hover {
+  color: #000;
+}
+
 .cart-header {
   display: flex;
-  text-align: center;
+  align-items: center;
   justify-content: space-between;
   padding: 1.4rem;
 }
@@ -221,6 +235,8 @@ body.stop-scrolling {
 .cart-title {
   font-size: 2rem;
   font-weight: 600;
+
+  margin-right: auto;
 }
 
 .cart-remove-all-btn {
@@ -229,6 +245,8 @@ body.stop-scrolling {
   color: #f03e3e;
   text-decoration: underline;
   cursor: pointer;
+
+  margin-left: 1.4rem;
 }
 
 .cart-items {

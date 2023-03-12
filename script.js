@@ -7,6 +7,7 @@ const overlay = document.querySelector(".overlay");
 const body = document.querySelector("body");
 
 const cartBtn = document.querySelector(".shopping-cart-btn");
+const cartCloseBtn = document.querySelector(".cart-close-btn");
 const cartTitle = document.querySelector(".cart-title");
 const cartRemoveAllBtn = document.querySelector(".cart-remove-all-btn");
 const cartRemoveBtn = document.querySelectorAll(".cart-remove");
@@ -60,6 +61,10 @@ const cartItems = [];
 
 cartBtn.addEventListener("click", function () {
   cartContainer.classList.toggle("open");
+});
+
+cartCloseBtn.addEventListener("click", function () {
+  cartContainer.classList.remove("open");
 });
 
 /// ADD ITEM TO CART
