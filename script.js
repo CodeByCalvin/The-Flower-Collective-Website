@@ -1,11 +1,27 @@
+////////////////////////////////////////
 ////////// SELECTING ELEMENTS //////////
+////////////////////////////////////////
 
+// Elements
+const aboutUsEle = document.getElementById("about-us");
+const testimonialsEle = document.getElementById("testimonials");
+const bestsellingEle = document.getElementById("bestselling");
+
+// Buttons
+const aboutUsBtn = document.querySelector(".nav-aboutus");
+const testimonialsBtn = document.querySelector(".nav-testimonials");
+const bestsellingBtn = document.querySelector(".nav-bestselling");
+const collectiveBoxBtn = document.querySelector(".nav-collectivebox");
+const learnMoreBtn = document.querySelector(".btn-learn-more");
+
+// Coupon Modal
 const couponClose = document.querySelector(".coupon-close");
 const couponContainer = document.querySelector(".coupon-container");
 const specialBoxBtn = document.querySelector(".discount-code-img");
 const overlay = document.querySelector(".overlay");
 const body = document.querySelector("body");
 
+// Shopping cart
 const cartBtn = document.querySelector(".shopping-cart-btn");
 const cartCloseBtn = document.querySelector(".cart-close-btn");
 const cartTitle = document.querySelector(".cart-title");
@@ -14,11 +30,14 @@ const cartRemoveBtn = document.querySelectorAll(".cart-remove");
 const cartItemsContainer = document.querySelector(".cart-items");
 const cartContainer = document.querySelector(".cart-container");
 
+// Bestselling
 const addToCartBtn1 = document.querySelector(".btn--1");
 const addToCartBtn2 = document.querySelector(".btn--2");
 const addToCartBtn3 = document.querySelector(".btn--3");
 
-////////// DISCOUNT MODAL POPUP //////////
+///////////////////////////////////
+///////// DISCOUNT MODAL //////////
+///////////////////////////////////
 
 specialBoxBtn.addEventListener("click", function () {
   couponContainer.classList.remove("hidden");
@@ -34,7 +53,9 @@ couponClose.addEventListener("click", function () {
   body.classList.remove("stop-scrolling");
 });
 
+///////////////////////////////////
 ////////// SHOPPING CART //////////
+///////////////////////////////////
 
 const items = [
   {
@@ -220,3 +241,45 @@ function updateCart() {
 // });
 
 console.log(cartItems);
+
+///////////////////////////////////////
+////////// SCROLLING BUTTONS //////////
+///////////////////////////////////////
+
+// TEMP - consider refractoring this part to avoid repeating codes (DRY) - forEach loop?
+
+aboutUsBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  aboutUsEle.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "nearest",
+  });
+});
+
+testimonialsBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  testimonialsEle.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "nearest",
+  });
+});
+
+bestsellingBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  bestsellingEle.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "nearest",
+  });
+});
+
+learnMoreBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  aboutUsEle.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "nearest",
+  });
+});
