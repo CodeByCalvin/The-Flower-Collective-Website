@@ -34,4 +34,5 @@
 <h1> Upcoming features </h1>
 <ul>
 <li> Coupon email/form functionality </li>
+  <li> Design updates to 'about us' section </li>
 </ul>
