@@ -67,6 +67,7 @@ cartBtn.addEventListener("click", function () {
 cartCloseBtn.addEventListener("click", function () {
   cartContainer.classList.remove("open");
 });
+//
 
 /// ADD ITEM TO CART
 function addItemToCart(name, price) {
@@ -89,18 +90,21 @@ addToCartBtn1.addEventListener("click", function (event) {
   event.preventDefault(),
     addItemToCart(items[0].name, items[0].price),
     updateCart();
+  cartContainer.classList.add("open");
 });
 
 addToCartBtn2.addEventListener("click", function (event) {
   event.preventDefault(),
     addItemToCart(items[1].name, items[1].price),
     updateCart();
+  cartContainer.classList.add("open");
 });
 
 addToCartBtn3.addEventListener("click", function (event) {
   event.preventDefault(),
     addItemToCart(items[2].name, items[2].price),
     updateCart();
+  cartContainer.classList.add("open");
 });
 
 /// REMOVE ALL ITEMS FROM CART
@@ -203,16 +207,16 @@ function updateCart() {
 }
 
 // TEMP - to remove after fixing formatting of shopping cart
-document.addEventListener("DOMContentLoaded", function () {
-  addItemToCart(items[0].name, items[0].price), updateCart();
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   addItemToCart(items[0].name, items[0].price), updateCart();
+// });
 
-document.addEventListener("DOMContentLoaded", function () {
-  addItemToCart(items[1].name, items[1].price), updateCart();
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   addItemToCart(items[1].name, items[1].price), updateCart();
+// });
 
-document.addEventListener("DOMContentLoaded", function () {
-  addItemToCart(items[2].name, items[2].price), updateCart();
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   addItemToCart(items[2].name, items[2].price), updateCart();
+// });
 
 console.log(cartItems);

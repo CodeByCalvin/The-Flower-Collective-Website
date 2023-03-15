@@ -271,6 +271,7 @@ body.stop-scrolling {
   padding: 0.8rem 0.4rem;
   height: 7rem;
   border-bottom: 2px solid rgba(155, 155, 155, 0.132);
+  transition: transform 0.5s ease-out;
 }
 
 .cart-item-img {
