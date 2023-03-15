@@ -106,33 +106,6 @@ function addItemToCart(name, price) {
   }
 }
 
-/// BESTSELLING ITEMS ADD TO CART
-addToCartBtn1.addEventListener("click", function (event) {
-  event.preventDefault(),
-    addItemToCart(items[0].name, items[0].price),
-    updateCart();
-  cartContainer.classList.add("open");
-});
-
-addToCartBtn2.addEventListener("click", function (event) {
-  event.preventDefault(),
-    addItemToCart(items[1].name, items[1].price),
-    updateCart();
-  cartContainer.classList.add("open");
-});
-
-addToCartBtn3.addEventListener("click", function (event) {
-  event.preventDefault(),
-    addItemToCart(items[2].name, items[2].price),
-    updateCart();
-  cartContainer.classList.add("open");
-});
-
-/// REMOVE ALL ITEMS FROM CART
-cartRemoveAllBtn.addEventListener("click", function () {
-  cartItemsContainer.innerHTML = "";
-});
-
 /// UPDATE THE CART ITEMS
 function updateCart() {
   // Clear the cart items container
@@ -227,20 +200,34 @@ function updateCart() {
   updateSubtotal();
 }
 
-// TEMP - to remove after fixing formatting of shopping cart
-// document.addEventListener("DOMContentLoaded", function () {
-//   addItemToCart(items[0].name, items[0].price), updateCart();
-// });
+updateCart();
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   addItemToCart(items[1].name, items[1].price), updateCart();
-// });
+/// BESTSELLING ITEMS ADD TO CART
+addToCartBtn1.addEventListener("click", function (event) {
+  event.preventDefault(),
+    addItemToCart(items[0].name, items[0].price),
+    updateCart();
+  cartContainer.classList.add("open");
+});
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   addItemToCart(items[2].name, items[2].price), updateCart();
-// });
+addToCartBtn2.addEventListener("click", function (event) {
+  event.preventDefault(),
+    addItemToCart(items[1].name, items[1].price),
+    updateCart();
+  cartContainer.classList.add("open");
+});
 
-console.log(cartItems);
+addToCartBtn3.addEventListener("click", function (event) {
+  event.preventDefault(),
+    addItemToCart(items[2].name, items[2].price),
+    updateCart();
+  cartContainer.classList.add("open");
+});
+
+/// REMOVE ALL ITEMS FROM CART
+cartRemoveAllBtn.addEventListener("click", function () {
+  cartItemsContainer.innerHTML = "";
+});
 
 ///////////////////////////////////////
 ////////// SCROLLING BUTTONS //////////
