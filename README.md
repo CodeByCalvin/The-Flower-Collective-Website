@@ -10,16 +10,19 @@
 
 <h1> List of features </h1>
 <ul>
-<li>Smooth scrolling </li>
+<li>Shopping cart</li>
+<li>Smooth scrolling to elements via button clicks </li>
 <li>Pop-up modal window for a coupon code</li>
 <li>Mouseover button effects</li>
-<li>Company values section
-<li>Testimonials section
+<li>Company values section </li>
+<li>Testimonials section </li>
 <li>Card items for bestselling products</li>
 <li> Footer element </li>
 </ul>
 
 ![Pop-up modal window for a coupon code](https://i.imgur.com/zGttNXF.gif "The Flower Collective coupon modal window")
+
+![Shopping cart](https://i.imgur.com/UC4xBHX.gif "The Flower Collective shopping cart")
 
 
 ![Mouseover button effects](https://i.imgur.com/PKmmGBH.gif "TThe Flower Collective mouseover effects")
@@ -30,7 +33,5 @@
 
 <h1> Upcoming features </h1>
 <ul>
-<li> Smooth scrolling functionality linked to button-presses </li>
-<li> Shopping cart element </li>
 <li> Coupon email/form functionality </li>
 </ul>
