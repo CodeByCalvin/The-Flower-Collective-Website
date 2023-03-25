@@ -6,6 +6,7 @@
 const aboutUsEle = document.getElementById("about-us");
 const testimonialsEle = document.getElementById("testimonials");
 const bestsellingEle = document.getElementById("bestselling");
+const allSections = document.querySelectorAll(".section");
 
 // Buttons
 const aboutUsBtn = document.querySelector(".nav-aboutus");
@@ -34,6 +35,30 @@ const cartContainer = document.querySelector(".cart-container");
 const addToCartBtn1 = document.querySelector(".btn--1");
 const addToCartBtn2 = document.querySelector(".btn--2");
 const addToCartBtn3 = document.querySelector(".btn--3");
+
+///////////////////////////////////
+///////////// GENERAL /////////////
+///////////////////////////////////
+
+// Reveal sections
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("section--hidden");
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.22,
+});
+
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add("section--hidden");
+});
 
 ///////////////////////////////////
 ///////// DISCOUNT MODAL //////////
@@ -233,40 +258,18 @@ cartRemoveAllBtn.addEventListener("click", function () {
 ////////// SCROLLING BUTTONS //////////
 ///////////////////////////////////////
 
-// TEMP - consider refractoring this part to avoid repeating codes (DRY) - forEach loop?
-
-aboutUsBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  aboutUsEle.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-    inline: "nearest",
+function scrollToSection(button, section) {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
   });
-});
+}
 
-testimonialsBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  testimonialsEle.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-    inline: "nearest",
-  });
-});
-
-bestsellingBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  bestsellingEle.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-    inline: "nearest",
-  });
-});
-
-learnMoreBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  aboutUsEle.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-    inline: "nearest",
-  });
-});
+scrollToSection(aboutUsBtn, aboutUsEle);
+scrollToSection(testimonialsBtn, testimonialsEle);
+scrollToSection(bestsellingBtn, bestsellingEle);
+scrollToSection(learnMoreBtn, aboutUsEle);

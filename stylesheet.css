@@ -73,7 +73,17 @@ body {
 }
 
 section {
-  padding: 9.6rem 3.6rem;
+  padding: 28rem 3.6rem;
+}
+
+.section {
+  transition: transform 1.5s, opacity 1s;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(14rem);
+  margin-top: -3rem;
 }
 
 .hidden {
@@ -544,6 +554,10 @@ p {
 /****************************/
 /* WHAT MAKES OUR COLLECTION SPECIAL */
 /****************************/
+
+.about-us {
+  padding-top: 8rem;
+}
 
 .special-container {
   display: grid;
